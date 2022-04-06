@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Header from './common/Header';
 import reportWebVitals from './reportWebVitals';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://react-back.test/api';
+axios.defaults.headers.common['Authorization'] ='Bearer '+localStorage.getItem('token')
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Header />
   </React.StrictMode>,
   document.getElementById('root')
 );
